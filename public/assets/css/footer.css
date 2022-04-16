@@ -1,0 +1,151 @@
+footer{
+  background: #1e1e1e;
+  width:100%;
+}
+footer .main{
+  display: flex;
+}
+footer .main .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+footer .box h2{
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+footer .box .heading{
+  margin: 20px 0 35px 0;
+  position: relative;
+  color:#fff;
+}
+footer .box .heading:before{
+  position: absolute;
+  content: '';
+  bottom: -10px;
+  height: 2px;
+  width: 100%;
+  background: #eeeeee;
+}
+footer .box .heading:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 15%;
+  background:#11406a;
+  bottom: -10px;
+}
+footer .left .text p{
+  text-align: justify;
+  color:#fff;
+}
+footer .left .socialLinks {
+  margin: 20px 0 0 0;
+  display:flex;
+  list-style:none;
+}
+footer .left .socialLinks  a{
+  padding: 0 2px;
+  color:#fff;
+}
+footer .left .socialLinks  a i{
+  height: 40px;
+  width: 40px;
+  background: #11406a;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+footer .left .socialLinks  a i:hover{
+  background: #f12020;
+}
+
+footer .middle .fas{
+  font-size: 1.4375rem;
+  background: #11406a;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+  color:#fff;
+}
+footer .middle .fas:hover{
+  background: #f12020;
+}
+footer .middle .text{
+  font-size: 1rem;
+  font-weight: 500;
+  padding-left: 10px;
+  color:#fff;
+}
+footer .middle .phone{
+  margin: 15px 0;
+  color:#fff;
+}
+
+footer .right .quickLinks{
+  list-style:none;
+}
+
+footer .right .quickLinks li{
+  margin:10px 0;
+}
+
+footer .right .quickLinks li a{
+  font-size: .9rem;
+  font-weight: 500;
+  padding-left: 10px;
+  text-decoration:none;
+  color:#fff;
+  text-transform:uppercase;
+}
+
+footer .right .quickLinks li:hover {
+  margin-left:10px;
+  transition:all .15s ease-in-out;
+  cursor:pointer;
+}
+
+
+
+footer .bottom center{
+  padding: 5px;
+  font-size: 0.9375rem;
+  background: #1e1e1e;
+  padding-bottom:100px;
+}
+footer .bottom center span{
+  color: #656565;
+}
+footer .bottom center a{
+  color: #f12020;
+  text-decoration: none;
+}
+footer .bottom center a:hover{
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+  footer{
+    position: relative;
+    bottom: 0px;
+  }
+  footer .main{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  footer .main .box{
+    margin: 5px 0;
+  }
+}
+
+hr{
+  color:#fff;
+  max-width:90%;
+  margin:10px auto;
+}

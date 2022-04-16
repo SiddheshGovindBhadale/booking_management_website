@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- UNICONS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- BOXICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- styling -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <!-- navbar styling -->
+    <link href="../assets/css/navbar.css" rel="stylesheet">
+    <!-- services styling -->
+    <link href="../assets/css/services.css" rel="stylesheet">
+    <!-- footer styling -->
+    <link href="../assets/css/footer.css" rel="stylesheet">
+    <!-- loader css -->
+    <link href="../assets/css/loader.css" rel="stylesheet"  >
+    
+    <title>services Form</title>
+    
+    <style type="text/css">
+      .showServices{
+        display:block !important;
+        margin-top:40px;
+      }
+      
+      .showServices .box {
+        margin:15px 0px;
+      }
+    </style>
+</head>
+
+<body id="top">
+    
+    {{>adminNav}}
+
+
+    <section class="booking container">
+        <div class="changeBtn">
+            <button class="active" onclick="allServices()">All Services</button>
+            <button onclick="addServices()">Add Services</button>
+        </div>
+        <div class="main" id="change" >
+             <div class="showServices" id="services" >
+             
+             </div>
+        </div>
+    </section>
+
+   
+
+
+   <section id="models" ></section>
+
+
+
+    <!-- loader js -->
+    <script src="../assets/js/loader.js"></script>
+    <!-- bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- coustom js -->
+    <script src="../assets/js/main.js"></script>
+    
+    
+    <!-- services js -->
+<!--    <script src="assets/js/services.js"></script>-->
+    
+    <script type="text/javascript">
+    
+    let postUrl = "/services"
+    let change = document.getElementById("change")
+    let changeBtn = document.querySelector(".changeBtn")
+    let Services = document.getElementById("services")
+    let serviceModel = document.getElementById("models")
+    showData()
+    function allServices(){
+      change.innerHTML = `<div class="showServices" id="services" ></div>`
+      changeBtn.children[1].classList.remove('active')
+      changeBtn.children[0].classList.add('active')
+      document.location.reload(true)
+    }
+    
+    function addServices(){
+      change.innerHTML = `
+            <form id="addServices" >
+                 <div class="form-group">
+                      <input type="text"  class="form-control" id="name" placeholder="Test Name" name="name" >
+                 </div>
+                 <div class="form-group">
+                      <input type="text"  class="form-control" id="type" placeholder="Test Type" name="type" >
+                 </div>
+                 <div class="form-group">
+                      <input type="text"  class="form-control" id="time" placeholder="Delivery Time" name="dTime" >
+                 </div>
+                 <div class="row">
+                      <div class="col">
+                           <input type="text" class="form-control" placeholder="after Price" id="price" name="price" >
+                      </div>
+                      <div class="col">
+                           <input type="text" class="form-control" placeholder="before price" id="bPrice" name="bPrice" >
+                      </div>
+                 </div>
+                 <div class="form-group">
+                      <input type="text" class="form-control" id="preTest" placeholder="Pre Test Preparation" name="preTest" >
+                 </div>
+                 <a href="#!" id="submit" class="btn" style="width:100%; background-color:#11406a; color:#fff; margin-top:5px;">Book</a>
+            </form>
+      `
+      changeBtn.children[0].classList.remove('active')
+      changeBtn.children[1].classList.add('active')
+      postServices()
+    }
+    
+    
+    // show services in page
+    function showData(){
+    loade()
+    let ServicesData = ""
+    let ServicesModels = ""
+    /*get request*/
+    fetch(postUrl)
+    .then(res => res.json())
+    .then(data => {
+    data.forEach(function(item,index){
+    ServicesData += `
+    <div class="box">
+    <h3>${item.name}</h3>
+    <div class="pre_info">
+    <p><b>Pre Test Information :</b></p>
+    <span>${item.preTest}</span>
+    </div>
+    <div class="repo_delevery">
+    <p><b>Report Delevry :</b></p>
+    <span>${item.dTime} hours</span>
+    </div>
+    <div class="price" >
+    <h5 class="current" ><i class="fa-solid fa-indian-rupee-sign"></i> ${item.price}</h5>
+    <h5 class="before" ><i class="fa-solid fa-indian-rupee-sign"></i> ${item.bPrice}</h5>
+    </div>
+    <div class="buttons">
+    <a href="#!" class="button" data-toggle="modal" data-target="#models${item._id}">View Details</a>
+    <a href="#!" class="button bg-danger" id="${item._id}" onclick="remove(this.id)">Delete</a>
+    </div>
+    <p class="info"><i class='bx bx-home-alt'></i> Home Collection Available</p>
+    </div>
+    `
+    
+    ServicesModels += `
+    <div class="modal fade" id="models${item._id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    
+    <article class="card__content grid">
+    <div class="card__pricing">
+    <div class="card__pricing-number">
+    <div class="price" style="flex-direction: column;" >
+    <h5 class="current" style=" color:#fff;" ><i class="fa-solid fa-indian-rupee-sign"></i> ${item.price}</h5>
+    <h5 class="before" style=" color:#fff;"><i class="fa-solid fa-indian-rupee-sign"></i> ${item.bPrice}</h5>
+    </div>
+    </div>
+    <!--<span class="card__pricing-month">/test</span>-->
+    </div>
+    
+    <header class="card__header">
+    <div class="card__header-circle ">
+    <a href="#!" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </a>
+    </div>
+    
+    <span class="card__header-subtitle">Most popular</span>
+    <h1 class="card__header-title">${item.name}</h1>
+    </header>
+    
+    <table class="table">
+    <tbody>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td style="display:flex;"><span><i class="fa-solid fa-flask"></i></span>
+    <p> Test Type</p>
+    </td>
+    <td>:</td>
+    <td>${item.type}</td>
+    </tr>
+    <tr>
+    <td>
+    <div style="display:flex;"><span><i class="fas fa-info-circle"></i></span>
+    <p> Pre-test Information</p>
+    </div>
+    </td>
+    <td>:</td>
+    <td>${item.preTest}</td>
+    </tr>
+    <tr>
+    <td style="display:flex;"><span><i class="fa-solid fa-clock"></i></span>
+    <p> Report Delivery</p>
+    </td>
+    <td>:</td>
+    <td>${item.dTime} hours</td>
+    </tr>
+    <tr>
+    <td style="display:flex;">
+    <span><i class="fa-solid fa-indian-rupee-sign" style="margin:0 5px;"></i></span>
+    <p> Price</p>
+    </td>
+    <td>:</td>
+    <td><span><i class="fa-solid fa-indian-rupee-sign"></i></span> <span>${item.price} </span></td>
+    </tr>
+    </tbody>
+    </table>
+    
+    <a href="#!" class="card__button" onclick="sendData(${index})">Book Appointment</a>
+    </article>
+    </div>
+    </div>
+    </div>
+    `
+    }) 
+    Services.innerHTML = ServicesData
+    serviceModel.innerHTML = ServicesModels
+    })
+    .catch((e)=>{
+    console.log(e)
+    })
+    }
+    
+    
+    
+    /*function Display(type, displayMessage) {
+    let message = document.getElementById('message');
+    message.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
+    <strong>Messge:</strong> ${displayMessage}
+    <button type="button" class="close btn" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">×</span>
+    </button>
+    </div>`;
+    setTimeout(function () {
+    message.innerHTML = ''
+    }, 4000);
+    
+    }*/
+    
+    function postServices(){
+    // add services
+    let myform= document.getElementById("addServices")
+    let submit = document.getElementById("submit")
+    let name = document.getElementById("name")
+   let type = document.getElementById("type")
+   let time = document.getElementById("time")
+   let price = document.getElementById("price")
+   let bPrice = document.getElementById("bPrice")
+   let preTest = document.getElementById("preTest")
+   
+   submit.addEventListener("click" , function(){
+   loade()
+   
+   let obj = {
+   name:name.value,
+   type:type.value,
+   dTime:time.value,
+   price:price.value,
+   bPrice:bPrice.value,
+   preTest:preTest.value
+   }
+   fetch(postUrl , {
+   method: 'POST',
+   headers:{
+   'Content-Type': 'application/json'
+   },
+   body: JSON.stringify(obj),
+   })
+   .then(res => res.json())
+   .then(data => {
+   
+   })
+   .catch(error => {
+   console.log(error);
+   });
+   name.value =""
+   type.value=""
+   time.value=""
+   price.value=""
+   bPrice.value=""
+   preTest.value=""
+   })
+    
+    }
+    
+    
+    
+    
+    // delete function
+    function remove(id){
+      let check = confirm("Do you want Delete this Service")
+      if(check == true){
+       fetch(postUrl + "/" + id, {
+            method: 'DELETE'
+       })
+       .then(() => {showData()})
+       .catch(err => {
+            console.error(err)
+        });
+        showData()
+        Display('success', 'Service Deleted')
+       }
+    }
+    </script>
+</body>
+
+</html>

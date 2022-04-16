@@ -1,0 +1,178 @@
+/* login form */
+
+
+.loginForm {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100%;
+  width:100%;
+  margin-bottom:0px !important;
+  padding:25px 10px;
+}
+
+.wrapper{
+        overflow: hidden;
+        max-width: 390px;
+        margin:10px 10px;
+        background: #fff;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+        }
+        .wrapper .title-text{
+        display: flex;
+        width: 200%;
+        }
+        .wrapper .title{
+        width: 50%;
+        font-size: 35px;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.3s ;
+        }
+        .wrapper .slide-controls{
+        position: relative;
+        display: flex;
+        height: 50px;
+        width: 100%;
+        overflow: hidden;
+        margin: 30px 0 10px 0;
+        justify-content: space-between;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        }
+        .slide-controls .slide{
+        height: 100%;
+        width: 100%;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+        line-height: 48px;
+        cursor: pointer;
+        z-index: 1;
+        transition: all 0.3s;
+        }
+        .slide-controls label.signup{
+        color: #000;
+        }
+        .slide-controls .slider-tab{
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        left: 0;
+        z-index: 0;
+        border-radius: 5px;
+        background: -webkit-linear-gradient(left, #025f9e,#11406a);
+        transition: all 0.3s ;
+        }
+        input[type="radio"]{
+        display: none;
+        }
+        #signup:checked ~ .slider-tab{
+        left: 50%;
+        }
+        #signup:checked ~ label.signup{
+        color: #fff;
+        cursor: default;
+        user-select: none;
+        }
+        #signup:checked ~ label.login{
+        color: #000;
+        }
+        #login:checked ~ label.signup{
+        color: #000;
+        }
+        #login:checked ~ label.login{
+        cursor: default;
+        user-select: none;
+        }
+        .wrapper .form-container{
+        width: 100%;
+        overflow: hidden;
+        }
+        .form-container .form-inner{
+        display: flex;
+        width: 200%;
+        }
+        .form-container .form-inner form{
+        width: 50%;
+        transition: all 0.3s ;
+        }
+        .form-inner form .field{
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+        }
+        .form-inner form .field input{
+        height: 100%;
+        width: 100%;
+        outline: none;
+        padding-left: 15px;
+        border-radius: 5px;
+        border: 1px solid lightgrey;
+        border-bottom-width: 2px;
+        font-size: 17px;
+        transition: all 0.3s ease;
+        }
+        .form-inner form .field input:focus{
+        border-color: #59abe3;
+        /* box-shadow: inset 0 0 3px #fb6aae; */
+        }
+        .form-inner form .field input::placeholder{
+        color: #999;
+        transition: all 0.3s ease;
+        }
+        form .field input:focus::placeholder{
+        color: #b3b3b3;
+        }
+        .form-inner form .pass-link{
+        margin-top: 5px;
+        }
+        .form-inner form .signup-link{
+        text-align: center;
+        margin-top: 30px;
+        }
+        .form-inner form .pass-link a,
+        .form-inner form .signup-link a{
+        color: #11406a;
+        text-decoration: none;
+        }
+        .form-inner form .pass-link a:hover,
+        .form-inner form .signup-link a:hover{
+        text-decoration: underline;
+        }
+        form .loginbtn{
+        height: 50px;
+        width: 100%;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        }
+        form .loginbtn .btn-layer{
+        height: 100%;
+        width: 300%;
+        position: absolute;
+        left: -100%;
+        background: -webkit-linear-gradient(right, #025f9e , #025f9e, #11406a, #11406a);
+        border-radius: 5px;
+        transition: all 0.4s ease;;
+        }
+        form .loginbtn:hover .btn-layer{
+        left: 0;
+        }
+        form .loginbtn input[type="submit"]{
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        position: relative;
+        background: none;
+        border: none;
+        color: #fff;
+        padding-left: 0;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        }
