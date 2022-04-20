@@ -29,7 +29,7 @@ function showData(){
                         </div>
                         <div class="buttons">
                              <a href="#!" class="button" data-toggle="modal" data-target="#${item._id}">View Details</a>
-                             <a href="#!" class="button" onclick="sendData(${index})">Book now</a>
+                             <a href="#!" class="button" id="${index}" onclick="sendData(this.id)">Book now</a>
                         </div>
                         <p style="display:none;">${item.type}</p>
                         <p class="info"><i class='bx bx-home-alt'></i> Home Collection Available</p>
@@ -141,7 +141,8 @@ function sendData(id){
                  preTest: data[id].preTest,
                  dTime: data[id].dTime,
                  price: data[id].price,
-                 type: data[id].type
+                 type: data[id].type,
+                 index: id
              };
              console.log(bookObj.title)
     
@@ -157,7 +158,7 @@ function sendData(id){
     
              sessionStorage.setItem("myBooking", JSON.stringify(bookArr));
     
-             location.href ="./bookForm.html"
+             location.href ="/bookFormL"
         }) 
     
     .catch((e)=>{

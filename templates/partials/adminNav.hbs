@@ -18,7 +18,7 @@
     </span>
     </div>
     
-    <span class="signUp" ><a href="/adminsloginL" >Login <i class="fa-solid fa-right-from-bracket"></i></a></span>
+    <span class="signUp" ><a href="/adminlogout" >Logout <i class='bx bx-log-out'></i></a></span>
     </div>
     </nav>
     
@@ -36,7 +36,7 @@
     <div class="menu">
     <ul>
     <li >
-    <a href="/" >
+    <a href="/adminDashL" >
     <i class="fas fa-qrcode"></i>
     <span>Dashboard</span>
     </a>
@@ -79,10 +79,12 @@
     <img src="../assets/img/icon/user.png" alt="profileImg">
     </div>
     <div class="name-job">
-    <div class="profile_name">Prem Shahi</div>
+    <div class="profile_name">{{admin.name}}</div>
     <div class="job"></div>
     </div>
-    <i class='bx bx-log-out' ></i>
+    <a href="/adminlogout" style="color: black; text-decoration:none;"><i class='bx bx-log-out'></i></a>
     
     </div>
     </div>
+    
+    

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>New Booking</title>
+    <title>Collected</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
@@ -26,17 +26,17 @@
    <link href="../assets/css/table.css" rel="stylesheet">
    <!-- loader css -->
    <link href="../assets/css/loader.css" rel="stylesheet"  >
- 
+   
 </head>
 
 <body>
-{{>adminNav}}
+    {{>adminNav}}
 
 
     
     <section class="collected container" >
     <div class="title">
-    <h3>New Booking !!</h3>
+    <h3>Blood Collected</h3>
     </div>
     
     <div class="search">
@@ -47,6 +47,7 @@
     </a>
     </div>
     </div>
+    
     
     <div class="main" >
     <div class="table_responsive">
@@ -69,6 +70,49 @@
     </thead>
     
     <tbody>
+    <!--<tr>
+    <td>01</td>
+    <td><img src="../assets/img/icon/user.png" alt=""></td>
+    <td>Muhibbullah Ansary</td>
+    <td>+880 017xx-xxxxxx</td>
+    <td>Mymensingh sadar</td>
+    <td>
+    <span class="action_btn">
+    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Create Admin</a>
+    <a href="#">Remove</a>
+    </span>
+    </td>
+    </tr>
+    
+    <tr>
+    <td>02</td>
+    <td><img src="../assets/img/icon/user.png" alt=""></td>
+    <td>Moshior Rahman Arif</td>
+    <td>+880 017xx-xxxxxx</td>
+    <td>Mymensingh Sadar</td>
+    <td>
+    <span class="action_btn">
+    <a href="#">Edit</a>
+    <a href="#">Remove</a>
+    </span>
+    </td>
+    </tr>
+    
+    
+    <tr>
+    <td>03</td>
+    <td><img src="../assets/img/icon/user.png" alt=""></td>
+    <td>Suibe</td>
+    <td>+880 017xx-xxxxxx</td>
+    <td>Mymensingh Sadar</td>
+    <td>
+    <span class="action_btn">
+    <a href="#">Edit</a>
+    <a href="#">Remove</a>
+    </span>
+    </td>
+    </tr>-->
+    
     </tbody>
     </table>
     </div>
@@ -91,8 +135,8 @@
 <script type="text/javascript">
 
 
-let url = "/booking"
-let postUrl = "/collected"
+let url = "/collected"
+let postUrl = "/completed"
 sendData()
 let tbody = document.querySelector("tbody")
 let models = document.getElementById("models")
@@ -109,20 +153,20 @@ function showdata(){
              
              Data += `
                  <tr class="myrow">
-                    <td>0${index + 1}</td>
+                    <td>${String(index + 1).padStart(2,'0')}</td>
                     <td>${item.date}</td>
                     <td>${item.name}</td>
-                    <td>${item.email}</td>
-                    <td><a href="href="tel:${item.phone}">${item.phone}</a></td>
+                    <td><a href="mailto:${item.email}">${item.email}</a></td>
+                    <td><a href="href="tel:91${item.phone}">${item.phone}</a></td>
                     <td>${item.test}</td>
                     <td><a href="#!" data-bs-toggle="modal" data-bs-target="#models${item._id}">View</a></td>
                     <td>${item.place}</td>
                     <td>${item.pincode}</td>
                     <td class="address" >${item.address}</td>
-                    <td style="color:red;">${item.status}</td>
+                    <td style="color:#fc9a38;">${item.status}</td>
                     <td>
                        <span class="action_btn">
-                            <a href="#!" id="b${index}" onclick="updateStatus(${index})">Collected</a>
+                            <a href="#!" id="b${index}" onclick="updateStatus(${index})">Email Send</a>
                             <a href="#!" id="${item._id}" onclick="manuallyDelete(this.id)">Cancel</a>
                        </span>
                     </td>
@@ -151,7 +195,6 @@ function showdata(){
         })
         tbody.innerHTML = Data;
         models.innerHTML = model
-        
         if(data.length == "0"){
           tbody.innerHTML = `<p style="padding-top:10px ; font-size:1.1rem; font-weidth:600;">Nothing To show</p>`
         }
@@ -159,6 +202,19 @@ function showdata(){
   .catch((e)=>{
   console.log(e)
   })
+}
+
+
+// delete function
+function remove(id){
+     fetch(url + "/" + id, {
+           method: 'DELETE'
+     })
+     .then(() => {showdata()})
+     .catch(err => {
+         console.error(err)
+     });
+     showdata()
 }
 
 function manuallyDelete(id){
@@ -169,27 +225,14 @@ function manuallyDelete(id){
   }
 }
 
-// delete function
-function remove(id){
-     fetch(url + "/" + id, {
-           method: 'DELETE'
-     })
-     .then(() => {})
-     .catch(err => {
-         console.error(err)
-     });
-     showdata()
-}
-
 
 
 
 
 function updateStatus(index){
   let obj = {}
-  let check = confirm("Do you really collected")
+  let check = confirm("Do you really send email")
   if(check == true){
-  
  fetch(url)
  .then(res => res.json())
  .then(data => {
@@ -206,7 +249,7 @@ function updateStatus(index){
         "date":Data.date,
         "userID":Data.userID,
         "image":Data.image,
-        "status": "Blood Collected"
+        "status": "completed"
       }
       
  
@@ -237,13 +280,9 @@ function updateStatus(index){
   console.log(e)
   })
   sendData()
+  Display('success', 'email send successfully')
   }
 }
-
-
-
-
-
 sendData()
 
 function sendData(){
@@ -252,7 +291,7 @@ function sendData(){
  .then(res => res.json())
  .then(data => {
     data.forEach((item , index) => {
-      if(item.status == "Blood Collected"){
+      if(item.status == "completed"){
          obj = {
            "name":item.name,
            "email":item.email,

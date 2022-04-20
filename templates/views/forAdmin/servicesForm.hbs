@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- UNICONS -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
     <!-- icon -->
@@ -41,7 +40,7 @@
     </style>
 </head>
 
-<body id="top">
+<body id="myServices">
     
     {{>adminNav}}
 
@@ -52,12 +51,59 @@
             <button onclick="addServices()">Add Services</button>
         </div>
         <div class="main" id="change" >
+             <div class="search" style="width:100%;" >
+                  <div class="searchbar">
+                       <input type="text" class="searchbar__input" name="q" placeholder="Search by Test,name,place" id="search">
+                       <a href="#table" id="searchBtn" class="searchbar__button">
+                           <i class="fas fa-search"></i>
+                       </a>
+                  </div>
+             </div>
              <div class="showServices" id="services" >
              
              </div>
         </div>
     </section>
-
+    
+    
+    
+    
+    <!-- Modal -->
+    <div class="modal fade" id="editServices" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+              <div class="modal-content">
+                   <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Service</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                   </div>
+                   <div class="modal-body">
+                        <form id="addServices" >
+                             <div class="form-group">
+                                  <input type="text"  class="form-control" id="upName" placeholder="Test Name" name="name" >
+                             </div>
+                             <div class="form-group">
+                                  <input type="text"  class="form-control" id="upType" placeholder="Test Type" name="type" >
+                             </div>
+                             <div class="form-group">
+                                  <input type="text"  class="form-control" id="upTime" placeholder="Delivery Time" name="dTime" >
+                             </div>
+                             <div class="row">
+                                  <div class="col">
+                                       <input type="text" class="form-control" placeholder="after Price" id="upPrice" name="price" >
+                                  </div>
+                                  <div class="col">
+                                       <input type="text" class="form-control" placeholder="before price" id="upBPrice" name="bPrice" >
+                                  </div>
+                             </div>
+                             <div class="form-group">
+                                  <input type="text" class="form-control" id="upPreTest" placeholder="Pre Test Preparation" name="preTest" >
+                             </div>
+                             <a href="#!" id="patchBtn" class="btn" style="width:100%; background-color:#11406a; color:#fff; margin-top:5px;">Update</a>
+                        </form>
+                   </div>
+              </div>
+         </div>
+    </div>
    
 
 
@@ -68,17 +114,11 @@
     <!-- loader js -->
     <script src="../assets/js/loader.js"></script>
     <!-- bootstrap js -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- coustom js -->
     <script src="../assets/js/main.js"></script>
+    <!-- update js -->
+    <script src="../assets/js/update.js"></script>
     
     
     <!-- services js -->
@@ -122,7 +162,7 @@
                  <div class="form-group">
                       <input type="text" class="form-control" id="preTest" placeholder="Pre Test Preparation" name="preTest" >
                  </div>
-                 <a href="#!" id="submit" class="btn" style="width:100%; background-color:#11406a; color:#fff; margin-top:5px;">Book</a>
+                 <a href="#!" id="submit" class="btn" style="width:100%; background-color:#11406a; color:#fff; margin-top:5px;">Add</a>
             </form>
       `
       changeBtn.children[0].classList.remove('active')
@@ -142,36 +182,43 @@
     .then(data => {
     data.forEach(function(item,index){
     ServicesData += `
-    <div class="box">
-    <h3>${item.name}</h3>
-    <div class="pre_info">
-    <p><b>Pre Test Information :</b></p>
-    <span>${item.preTest}</span>
-    </div>
-    <div class="repo_delevery">
-    <p><b>Report Delevry :</b></p>
-    <span>${item.dTime} hours</span>
-    </div>
-    <div class="price" >
-    <h5 class="current" ><i class="fa-solid fa-indian-rupee-sign"></i> ${item.price}</h5>
-    <h5 class="before" ><i class="fa-solid fa-indian-rupee-sign"></i> ${item.bPrice}</h5>
-    </div>
-    <div class="buttons">
-    <a href="#!" class="button" data-toggle="modal" data-target="#models${item._id}">View Details</a>
-    <a href="#!" class="button bg-danger" id="${item._id}" onclick="remove(this.id)">Delete</a>
-    </div>
-    <p class="info"><i class='bx bx-home-alt'></i> Home Collection Available</p>
+    <div class="box sBox">
+         <h3>${item.name}</h3>
+         <div class="pre_info">
+              <p><b>Pre Test Information :</b></p>
+              <span>${item.preTest}</span>
+         </div>
+         <div class="repo_delevery">
+              <p><b>Report Delevry :</b></p>
+              <span><span>${item.dTime}</span> hours</span>
+         </div>
+         <div class="price" >
+              <h5 class="current" >
+                  <i class="fa-solid fa-indian-rupee-sign"></i>
+                  <span>${item.price}</span>
+              </h5>
+              <h5 class="before" >
+                  <i class="fa-solid fa-indian-rupee-sign"></i> 
+                  <span>${item.bPrice}</span>
+              </h5>
+         </div>
+         <h3 style="display:none;">${item.type}</h3>
+         <div class="buttons">
+              <a href="#!" class="button" id="${index}" onclick="update(this.id)" data-bs-toggle="modal" data-bs-target="#editServices">Edit</a>
+              <a href="#!" class="button bg-danger" id="${item._id}" onclick="remove(this.id)">Delete</a>
+         </div>
+         <p class="info"><i class='bx bx-home-alt'></i> Home Collection Available</p>
     </div>
     `
     
-    ServicesModels += `
+    /*ServicesModels += `
     <div class="modal fade" id="models${item._id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
+         <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
     
-    <article class="card__content grid">
-    <div class="card__pricing">
-    <div class="card__pricing-number">
+                  <article class="card__content grid">
+                      <div class="card__pricing">
+       <div class="card__pricing-number">
     <div class="price" style="flex-direction: column;" >
     <h5 class="current" style=" color:#fff;" ><i class="fa-solid fa-indian-rupee-sign"></i> ${item.price}</h5>
     <h5 class="before" style=" color:#fff;"><i class="fa-solid fa-indian-rupee-sign"></i> ${item.bPrice}</h5>
@@ -237,10 +284,10 @@
     </div>
     </div>
     </div>
-    `
+    `*/
     }) 
     Services.innerHTML = ServicesData
-    serviceModel.innerHTML = ServicesModels
+    //serviceModel.innerHTML = ServicesModels
     })
     .catch((e)=>{
     console.log(e)
@@ -327,6 +374,33 @@
         Display('success', 'Service Deleted')
        }
     }
+    
+    
+    
+    
+    let search = document.getElementById("search")
+    
+    search.addEventListener("input" , function(){
+    
+       let searchVal = search.value.toLowerCase();
+       //console.log(searchVal)
+    
+       let box = document.getElementsByClassName("sBox")
+    
+       Array.from(box).forEach(function(element){
+          let testName = element.children[0].innerText.toLowerCase();
+        
+          if(testName.includes(searchVal)){
+             element.classList.remove("hide");
+             element.classList.add("show");
+          }
+          else{
+             element.classList.add("hide");
+             element.classList.remove("show");
+          }
+    
+       })
+    })
     </script>
 </body>
 

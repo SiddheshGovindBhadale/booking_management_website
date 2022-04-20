@@ -21,7 +21,7 @@
                       <input type="text" placeholder="Username" required name="username" >
                       <input type="password" placeholder="Password" required  name="password" >
                       <input type="password" placeholder="Confirm Password" required name="conPassword" >
-                      <input type="submit" value="Sign Up">
+                      <input type="submit" value="Add">
                  </form>
             </div>
       `
@@ -46,7 +46,7 @@
                   
                   StaffData += `
                         <tr>
-                           <td>0${index + 1}</td>
+                           <td>${String(index + 1).padStart(2,'0')}</td>
                            <td><img src="../assets/img/icon/user.png" alt=""></td>
                            <td>${item.name}</td>
                            <td>${item.username}</td>

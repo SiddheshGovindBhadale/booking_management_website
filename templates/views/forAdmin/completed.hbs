@@ -108,7 +108,7 @@ function showdata(){
              
              Data += `
                  <tr class="myrow">
-                    <td>0${index + 1}</td>
+                    <td>${String(index + 1).padStart(2,'0')}</td>
                     <td>${item.date}</td>
                     <td>${item.name}</td>
                     <td><a href="mailto:${item.email}">${item.email}</a></td>

@@ -8,6 +8,7 @@ const bcrypt = require("bcryptjs")
 const multer = require("multer")
 const cookieParser = require('cookie-parser')
 const hbs = require("hbs")
+const jwt = require("jsonwebtoken")
 
 require("../src/db/conection.js");
 const User = require("../src/models/users")
@@ -19,6 +20,7 @@ const Service = require("../src/models/services")
 const auth = require("../src/medalware/auth")
 const adminAuth = require("../src/medalware/adminAuth")
 const mainAdminAuth = require("../src/medalware/mainAdmin")
+const norAuth = require("../src/medalware/norAuth")
 
 
 const port = process.env.PORT || 3000
@@ -57,47 +59,99 @@ app.set("view engine" , "hbs")
 app.set("views" , temp_path)
 hbs.registerPartials(partials_path)
 
+let check =""
 
-
-// page redirection
-app.get( "/" ,mainAdminAuth, async (req , res) =>{
-  res.render("dashboard")
+// Admin page redirection
+app.get( "/adminDashL" ,adminAuth, async (req , res) =>{
+  res.render("forAdmin/dashboard" , {admin:req.admin})
 })
 
 app.get( "/adminsloginL" , async (req , res) =>{
-  res.render("admi3n")
+  res.render("forAdmin/adminLogin")
 })
 
-app.get( "/addAdminL" , async (req , res) =>{
-  res.render("addAdmin")
+app.get( "/addAdminL" , mainAdminAuth ,async (req , res) =>{
+  res.render("forAdmin/addAdmin" ,{admin:req.admin})
 })
 
 app.get( "/addServiceL" ,mainAdminAuth, async (req , res) =>{
-  res.render("servicesForm")
+  res.render("forAdmin/servicesForm",{admin:req.admin})
 })
 
-app.get( "/bookingDataL" ,mainAdminAuth, async (req , res) =>{
-  res.render("bookingData")
+app.get( "/bookingDataL" ,adminAuth, async (req , res) =>{
+  res.render("forAdmin/bookingData",{admin:req.admin})
 })
 
-app.get( "/collectedDataL" ,mainAdminAuth, async (req , res) =>{
-  res.render("collected")
+app.get( "/collectedDataL" ,adminAuth, async (req , res) =>{
+  res.render("forAdmin/collected",{admin:req.admin})
 })
 
-app.get( "/completedDataL" ,mainAdminAuth, async (req , res) =>{
-  res.render("completed")
+app.get( "/completedDataL" ,adminAuth, async (req , res) =>{
+  res.render("forAdmin/completed",{admin:req.admin})
 })
 
-/*
-app.get( "/siddhesh2" , adminAuth , async (req , res) =>{
-  res.render("test")
-  console.log(req.cookies.jwt)
+
+
+
+// User page redirection
+app.get( "/bookFormL" , auth, async (req , res) =>{
+  let userShortName = req.user.name.split(' ').slice(0,1).join(' ')
+  res.render("bookForm" , {
+      user:req.user,
+      shortName:userShortName
+  })
 })
 
-app.get( "/siddhesh3" , mainAdminAuth , async (req , res) =>{
-  res.render("test")
-  console.log(req.cookies.jwt)
-})*/
+app.get( "/" , async (req , res) =>{
+  const token = req.cookies.jwt
+  let check = token == undefined
+  if(token == undefined){
+     res.render("index" ,{
+         check:check
+     })
+  }else{
+     const verifyUser = jwt.verify(token , "thisisFaizalhomoglobinlevelcareandcompanynameishbccareandthiswrbsitecreatedbysiddheshbhadale")
+     const user = await User.findOne({_id : verifyUser._id})
+     let userShortName = user.name.split(' ').slice(0,1).join(' ')
+     res.render("index" , {
+          user:user,
+          check:check,
+          shortName:userShortName
+     })
+  }
+})
+
+app.get( "/userLoginL" , async (req , res) =>{
+  res.render("register")
+})
+
+app.get( "/userDashL" , auth , async (req , res) =>{
+  let userShortName = req.user.name.split(' ').slice(0,1).join(' ')
+  res.render("userDash" , {
+      user:req.user,
+      shortName:userShortName
+  })
+})
+
+app.get( "/userServicesL" , async (req , res) =>{
+  const token = req.cookies.jwt
+  let check = token == undefined
+  if(token == undefined){
+     res.render("services" ,{
+         check:check
+     })
+  }else{
+     const verifyUser = jwt.verify(token , "thisisFaizalhomoglobinlevelcareandcompanynameishbccareandthiswrbsitecreatedbysiddheshbhadale")
+     const user = await User.findOne({_id : verifyUser._id})
+     let userShortName = user.name.split(' ').slice(0,1).join(' ')
+     res.render("services" , {
+          check:check,
+          shortName:userShortName
+     })
+  }
+})
+
+
 
 
 
@@ -131,7 +185,10 @@ app.post("/users" , async (req , res) => {
         })
         
         const resisterd = await resisterUser.save()
-        res.status(201).render("index")
+        let userShortName = resisterUser.name.split(' ').slice(0,1).join(' ')
+        res.status(201).render("index" ,{
+            shortName:userShortName
+        })
      }else{
         res.send("password are not matching")
      }
@@ -150,9 +207,9 @@ app.get('/users', async(req, res) => {
   }
 })
 
-app.get('/username', auth, async(req, res) => {
+app.get('/userData', auth, async(req, res) => {
   try{
-     res.send(req.user.name);
+     res.send(req.user);
   }catch(e){
      res.status(400).send(e);
   }
@@ -175,7 +232,10 @@ app.post("/login" , async (req , res) => {
      })
      
      if(isMatch){
-        res.status(201).render("index")
+        let userShortName = userEmail.name.split(' ').slice(0,1).join(' ')
+        res.status(201).render("index" ,{
+            shortName:userShortName
+        })
      }else{
         res.send("Invalid Login details")
      }
@@ -192,7 +252,7 @@ app.get( "/logout" , auth , async(req , res) =>{
     console.log(` from logout ${req.user.name}`)
     
     req.user.tokens = req.user.tokens.filter((dbtoken) => {
-       return dbtoken.token !== req.token;
+       return dbtoken.token === req.token;
     })
     
     res.clearCookie("jwt")
@@ -210,7 +270,7 @@ app.get( "/logout" , auth , async(req , res) =>{
 
 /********* Admin **********/
 // Admin registeration
-app.post("/admin" , async (req , res) => {
+app.post("/admin" ,mainAdminAuth, async (req , res) => {
   try{
      const password = req.body.password
      const cPassword = req.body.conPassword
@@ -232,7 +292,7 @@ app.post("/admin" , async (req , res) => {
         })
         
         const resisterd = await resisterAdmin.save()
-        res.status(201).render("addAdmin")
+        res.status(201).render("forAdmin/addAdmin" ,{admin:resisterAdmin})
      }else{
         res.send("password are not matching")
      }
@@ -274,7 +334,7 @@ app.post("/adminlogin" , async (req , res) => {
      })
      
      if(isMatch){
-        res.status(201).render("dashboard")
+        res.status(201).render("forAdmin/dashboard" , {admin:userName})
      }else{
         res.send("Invalid Login details")
      }
@@ -288,16 +348,14 @@ app.post("/adminlogin" , async (req , res) => {
 // admin logout
 app.get( "/adminlogout" , adminAuth , async(req , res) =>{
   try{
-    console.log(` from logout ${req.admin.name}`)
     
     req.admin.tokens = req.admin.tokens.filter((dbtoken) => {
-       return dbtoken.token !== req.token;
+       return dbtoken.token === req.token;
     })
     
     res.clearCookie("jwt")
-    console.log("logout success")
     await req.admin.save()
-    res.render("admin")
+    res.render("forAdmin/adminLogin")
   }catch(e){
     console.log(e)
   }
@@ -368,6 +426,20 @@ app.get('/services', async(req, res) => {
   }
 })
 
+
+// update services
+app.patch('/services/:id', async(req, res) => {
+  try{
+     const _id = req.params.id;
+     const updateServices = await Service.findByIdAndUpdate(_id,req.body,{
+       new:true
+     });
+     res.send(updateServices);
+  }catch(e){
+     res.status(500).send(e);
+  }
+})
+
 // delete Services
 app.delete('/services/:id', async(req, res) => {
   try{
@@ -408,7 +480,7 @@ app.post('/booking', auth , upload.single('image'), async(req, res ,next) => {
        status : "pending"
      })
      const insertBooking =  await addBooking.save();
-     res.status(201).send(insertBooking)
+     res.status(201)
      
     
   }catch(e){

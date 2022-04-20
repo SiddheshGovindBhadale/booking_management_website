@@ -5,20 +5,18 @@ const mainAdminAuth = async(req , res , next) => {
    try{
       const token = req.cookies.jwt
       const verifyAdmin = jwt.verify(token , "thisisFaizalhomoglobinlevelcareandcompanynameishbccareandthiswrbsitecreatedbysiddheshbhadale")
-      console.log(verifyAdmin)
       
       const admin = await Admin.findOne({_id : verifyAdmin._id})
       
       req.token = token
       req.admin = admin
-      console.log(admin.isAdmin)
       if(admin.isAdmin == "true"){
          next()
       }else{
-         res.render("bookingData")
+         res.render("forAdmin/bookingData" , {admin:req.admin})
       }
    }catch(e){
-      res.status(401).render("admi3n")
+      res.status(401).render("forAdmin/adminLogin")
       console.log(e)
    }
 }

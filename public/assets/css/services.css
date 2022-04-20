@@ -398,7 +398,7 @@ li{list-style:none;}
   transition:all .3s;
 }
 
-.booking form{
+#myServices form , .booking form{
   max-width:360px;
   padding:35px 15px;
   margin:40px 10px;
@@ -407,16 +407,16 @@ li{list-style:none;}
   box-shadow: 0 4px 12px hsla(0, 0%, 20%, .1);
 }
 
-.booking .upload{
+#myServices .upload , .booking .upload {
   display:none;
 }
 
-.booking .form-control {
+#myServices .form-control ,.booking .form-control {
   margin:10px 0;
 }
 
 @media screen and (min-width: 400px) {
-  .booking form{
+  #myServices form ,.booking form{
     margin: 40px auto;
   }
 }

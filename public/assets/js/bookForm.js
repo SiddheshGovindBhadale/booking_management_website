@@ -2,7 +2,7 @@ console.log("booking")
 let testName = document.getElementById("test")
 
 
-let url = "http://localhost:3000/services"
+let url = "/services"
 let Services = document.getElementById("services")
 
 // show services in page
@@ -32,6 +32,7 @@ showData()
 
 
 // get data from session storage
+/*
 let localBook = sessionStorage.getItem("myBooking");
    
    if(localBook == null){
@@ -44,10 +45,10 @@ let localBook = sessionStorage.getItem("myBooking");
      let objIndex = bookArr.length - 1
      let lastEle = bookArr[objIndex]
      let timesRun = 0
-     console.log(lastEle.title)
+     let index = Number(lastEle.index) +1
      const myInterval = setInterval(select, 100);
      function select(){
-       document.getElementById("test").selectedIndex = objIndex + 1; 
+       document.getElementById("test").selectedIndex = index ; 
        timesRun += 1;
        console.log(timesRun)
        if(timesRun === 6){
@@ -55,7 +56,7 @@ let localBook = sessionStorage.getItem("myBooking");
        }
    }
    
-   }
+   }*/
    //testName.value = lastEle.title
    
    

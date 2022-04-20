@@ -1,12 +1,13 @@
-let url1 = "http://localhost:3000/booking"
-let url2 = "http://localhost:3000/collected"
-let url3 = "http://localhost:3000/completed"
+
+let url1 = "/booking"
+let url2 = "/collected"
+let url3 = "/completed"
+let url4 = "/userData"
 let tbody = document.querySelector("tbody")
 let models = document.getElementById("models")
 let changeBtn = document.querySelector(".changeBtn")
 
-let ird = "624069611bdb048720e0a857"
-pending(ird)
+
 function pending(id){
   let Data = "" ;
   let model = ""
@@ -14,13 +15,13 @@ function pending(id){
   fetch(url1)
   .then(res => res.json())
   .then(data => { 
+       let no = 0
         data.forEach(function(item , index){
-          console.log(item.userID == id)
-          
+          //console.log(item.userID == id)
           if(item.userID == id){
              Data += `
                  <tr>
-                    <td>0${index + 1}</td>
+                    <td>${String(no += 1).padStart(2,'0')}</td>
                     <td>${data[index].date}</td>
                     <td>${data[index].name}</td>
                     <td>${data[index].email}</td>
@@ -78,6 +79,16 @@ function pending(id){
   }
   
   
+  fetch(url4)
+  .then(res => res.json())
+  .then(data => { 
+  pending(data._id)
+  })
+  .catch((e)=>{
+  console.log(e)
+  })
+  
+  
   
   function collected(id){
   let Data = "" ;
@@ -86,12 +97,14 @@ function pending(id){
   fetch(url2)
   .then(res => res.json())
   .then(data => { 
+  let no = 0
   data.forEach(function(item2 , index){
-  console.log(item2.userID == id)
+  //console.log(item2.userID == id)
+  
   if(item2.userID == id){
   Data += `
   <tr>
-  <td>0${index + 1}</td>
+  <td>${String(no += 1).padStart(2,'0')}</td>
   <td>${item2.date}</td>
   <td>${item2.name}</td>
   <td>${item2.email}</td>
@@ -155,11 +168,13 @@ function completed(id){
   fetch(url3)
   .then(res => res.json())
   .then(data => { 
+  let no = 0
   data.forEach(function(item3 , index){
+  
   if(item3.userID == id){
   Data += `
   <tr>
-  <td>0${index + 1}</td>
+  <td>${String(Number(no += 1)).padStart(2,'0')}</td>
   <td>${item3.date}</td>
   <td>${item3.name}</td>
   <td>${item3.email}</td>
@@ -216,6 +231,7 @@ function completed(id){
   changeBtn.children[0].classList.remove('active')
   
   }
+
 
 
 // delete function

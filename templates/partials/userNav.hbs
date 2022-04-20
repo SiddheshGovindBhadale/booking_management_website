@@ -1,0 +1,104 @@
+<!--top navigation bar-->
+     <nav class="topNav">
+          <div class="main">
+              <div class="left" >
+               <div class="btn_one" onclick="toggle()">
+                    <img src="./assets/img/icon/menu.png">
+               </div>
+               <span class="logo">
+                     <img src="./assets/img/Logo/logo.png" >
+               </span>
+               </div>
+               
+               <span class="signUp" >
+                     {{#if check}}
+                         <a href="/userLoginL" >Register / Login</a>
+                     {{else}}
+                         <a href="/logout" >Logout <i class='bx bx-log-out'></i></a>
+                     {{/if}}
+               </span>
+          </div>
+     </nav>
+     
+     <div id="bg" ></div>
+     
+     <div class="sidebar_menu" id="sideMenu" >
+     <div class="logo">
+     <a href="#!"><img src="./assets/img/Logo/logo.png"></a>
+     </div>
+     <div class="btn_two">
+     <div class="close"  style="color:#000;">
+     <img src="./assets/img/icon/close.png"  onclick="toggle()">
+     </div>
+     </div>
+     <div class="menu">
+     <ul>
+     <li>
+     <a href="/">
+     <i class="fas fa-qrcode"></i>
+     <span>Home</span>
+     </a>
+     </li>
+     <li>
+     <a href="/userServicesL">
+     <i class="fas fa-link"></i>
+     <span href="#">All Tests</span>
+     </a>
+     </li>
+     <li>
+     <a href="/bookFormL">
+     <i class="fas fa-stream"></i>
+     <span>Book Test</span>
+     </a>
+     </li>
+     <li>
+     <a href="/userDashL">
+     <i class="fas fa-calendar-week"></i>
+     <span>Your Booking</span>
+     </a>
+     </li>
+     </ul>
+     </div>
+     
+     <div class="profile-details">
+     <div class="profile-content">
+     <img src="./assets/img/icon/user.png" alt="profileImg">
+     </div>
+     <div class="name-job">
+     <div class="profile_name">
+          {{#if check}}
+              Welcome Guest
+          {{else}}
+              {{shortName}}
+          {{/if}}
+     </div>
+     <div class="job"></div>
+     </div>
+          {{#if check}}
+               <a href="/userLoginL" style="color: black; text-decoration:none;"><i class='bx bx-log-in'></i></a>
+          {{else}}
+               <a href="/logout" style="color: black; text-decoration:none;"><i class='bx bx-log-out'></i></a>
+          {{/if}}
+     </div>
+     </div>
+     
+     
+     
+     <div class="note scrolling" >
+          <p>We provide Free Home Blood Collection</p>
+     </div>
+     
+     <div class="conInfo" >
+     <a href="https://wa.me/919987343837" class="conBtn" >
+     <span class="icon" style="background:#31d24e;" ><i class="fa-brands fa-whatsapp"></i></span>
+     </a>
+     <a href="tel:9987343837" class="conBtn"   >
+     <span class="icon" style="background:#4286f5;"><i class="fa-solid fa-phone"></i></span>
+     </a>
+     </div>
+     
+     <div class="bottomBtn" >
+     <a href="/bookFormL" >
+     <h2>Book Your Appointment</h2>
+     </a>
+     </div>
