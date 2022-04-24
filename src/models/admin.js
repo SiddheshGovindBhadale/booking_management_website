@@ -38,7 +38,7 @@ const adminSchema = new mongoose.Schema({
 /* generate and store jwt */
 adminSchema.methods.generateToken = async function(){
    try{
-     const token = jwt.sign({_id : this._id.toString()} , "thisisFaizalhomoglobinlevelcareandcompanynameishbccareandthiswrbsitecreatedbysiddheshbhadale")
+     const token = jwt.sign({_id : this._id.toString()} , "isFaizalhomoglobinlevelcareandcompanynameishbccareandthiswrbsitecreatedbysiddheshbhadale")
      this.tokens = this.tokens.concat({token:token})
      await this.save()
      return token;

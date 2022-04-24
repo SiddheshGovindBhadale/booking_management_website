@@ -4,7 +4,7 @@ const Admin = require("../models/admin")
 const adminAuth = async(req , res , next) => {
    try{
       const token = req.cookies.jwt
-      const verifyAdmin = jwt.verify(token , "thisisFaizalhomoglobinlevelcareandcompanynameishbccareandthiswrbsitecreatedbysiddheshbhadale")
+      const verifyAdmin = jwt.verify(token , "isFaizalhomoglobinlevelcareandcompanynameishbccareandthiswrbsitecreatedbysiddheshbhadale")
       
       const admin = await Admin.findOne({_id : verifyAdmin._id})
       

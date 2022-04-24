@@ -55,6 +55,7 @@
     <tr>
     <th>No</th>
     <th>Date</th>
+    <th>Slot</th>
     <th>Name</th>
     <th>Email</th>
     <th>Phone</th>
@@ -111,6 +112,7 @@ function showdata(){
                  <tr class="myrow">
                     <td>${String(index + 1).padStart(2,'0')}</td>
                     <td>${item.date}</td>
+                    <td>${item.slotStart} To ${item.slotEnd}</td>
                     <td>${item.name}</td>
                     <td>${item.email}</td>
                     <td><a href="href="tel:${item.phone}">${item.phone}</a></td>
@@ -139,7 +141,7 @@ function showdata(){
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                </div>
                                <div class="modal-body">
-                                    <img src="http://localhost:3000/product/${item.image.filename}" style="width:100%; height 100%" >
+                                    <img src="/product/${item.image.filename}" style="width:100%; height 100%" >
                                </div>
                                <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -198,6 +200,8 @@ function updateStatus(index){
       obj = {
         "name":Data.name,
         "email":Data.email,
+        "slotStart":Data.slotStart,
+        "slotEnd":Data.slotEnd,
         "phone":Data.phone, 
         "test":Data.test,
         "place":Data.place,
@@ -257,6 +261,8 @@ function sendData(){
            "name":item.name,
            "email":item.email,
            "phone":item.phone,
+           "slotStart":item.slotStart,
+           "slotEnd":item.slotEnd,
            "test":item.test,
            "place":item.place,
            "pincode":item.pincode,
@@ -311,9 +317,9 @@ let search = document.getElementById("search")
               let td5 = element.children[4].innerText.toLowerCase();
               let td6 = element.children[5].innerText.toLowerCase();
               let td7 = element.children[6].innerText.toLowerCase();
-              let td8 = element.children[7].innerText.toLowerCase();
-              let td9 = element.children[8].innerText.toLowerCase();
-              let td10 = element.children[9].innerText.toLowerCase();
+              let td8 = element.children[8].innerText.toLowerCase();
+              let td9 = element.children[9].innerText.toLowerCase();
+              let td10 = element.children[10].innerText.toLowerCase();
               
               if(td1.includes(searchVal) || td2.includes(searchVal) || td3.includes(searchVal) || td4.includes(searchVal) || td5.includes(searchVal) || td6.includes(searchVal) || td7.includes(searchVal) || td8.includes(searchVal) || td9.includes(searchVal) || td10.includes(searchVal)){
                  element.classList.remove("hide");

@@ -11,6 +11,12 @@ const completeSchema = new mongoose.Schema({
   phone:{
     type:Number
   },
+  slotStart:{
+    type:String
+  },
+  slotEnd:{
+    type:String
+  },
   test:{
     type:String
   },

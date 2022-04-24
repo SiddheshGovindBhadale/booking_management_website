@@ -23,6 +23,7 @@ function pending(id){
                  <tr>
                     <td>${String(no += 1).padStart(2,'0')}</td>
                     <td>${data[index].date}</td>
+                    <td>${data[index].slotStart} To ${data[index].slotEnd}</td>
                     <td>${data[index].name}</td>
                     <td>${data[index].email}</td>
                     <td>${item.phone}</td>
@@ -51,7 +52,7 @@ function pending(id){
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                </div>
                                <div class="modal-body">
-                                    <img src="http://localhost:3000/product/${item.image.filename}" style="width:100%; height 100%" >
+                                    <img src="/product/${item.image.filename}" style="width:100%; height 100%" >
                                </div>
                                <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -106,6 +107,7 @@ function pending(id){
   <tr>
   <td>${String(no += 1).padStart(2,'0')}</td>
   <td>${item2.date}</td>
+  <td>${item2.slotStart} To ${item2.slotEnd}</td>
   <td>${item2.name}</td>
   <td>${item2.email}</td>
   <td>${item2.phone}</td>
@@ -134,7 +136,7 @@ function pending(id){
   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
   </div>
   <div class="modal-body">
-  <img src="http://localhost:3000/product/${item2.image.filename}" style="width:100%; height 100%" >
+  <img src="/product/${item2.image.filename}" style="width:100%; height 100%" >
   </div>
   <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -176,6 +178,7 @@ function completed(id){
   <tr>
   <td>${String(Number(no += 1)).padStart(2,'0')}</td>
   <td>${item3.date}</td>
+  <td>${item3.slotStart} To ${item3.slotEnd}</td>
   <td>${item3.name}</td>
   <td>${item3.email}</td>
   <td>${item3.phone}</td>
@@ -204,7 +207,7 @@ function completed(id){
   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
   </div>
   <div class="modal-body">
-  <img src="http://localhost:3000/product/${item3.image.filename}" style="width:100%; height 100%" >
+  <img src="/product/${item3.image.filename}" style="width:100%; height 100%" >
   </div>
   <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

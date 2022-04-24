@@ -471,6 +471,8 @@ app.post('/booking', auth , upload.single('image'), async(req, res ,next) => {
        name: req.body.name,
        email:req.body.email,
        phone: req.body.phone,
+       slotStart: req.body.slotStart,
+       slotEnd: req.body.slotEnd,
        test: req.body.test,
        place: req.body.place,
        pincode: req.body.pincode,
@@ -480,9 +482,12 @@ app.post('/booking', auth , upload.single('image'), async(req, res ,next) => {
        status : "pending"
      })
      const insertBooking =  await addBooking.save();
-     res.status(201)
      
-    
+     let userShortName = req.user.name.split(' ').slice(0,1).join(' ')
+     res.status(201).render("bookForm" , {
+        user:req.user,
+        shortName:userShortName
+     })
   }catch(e){
      res.status(400).send(e);
      console.log(e)
@@ -537,6 +542,8 @@ app.post('/collected', async(req, res ) => {
        name: req.body.name,
        email:req.body.email,
        phone: req.body.phone,
+       slotStart: req.body.slotStart,
+       slotEnd: req.body.slotEnd,
        test: req.body.test,
        place: req.body.place,
        pincode: req.body.pincode,
@@ -604,6 +611,8 @@ app.post('/completed', async(req, res ) => {
        name: req.body.name,
        email:req.body.email,
        phone: req.body.phone,
+       slotStart: req.body.slotStart,
+       slotEnd: req.body.slotEnd,
        test: req.body.test,
        place: req.body.place,
        pincode: req.body.pincode,
@@ -632,6 +641,15 @@ app.get('/completed', async(req, res) => {
   }
 })
 
+// delete collect
+app.delete('/completed/:id', async(req, res) => {
+  try{
+     const DeleteComplet = await Completed.findByIdAndDelete(req.params.id);
+     res.send(DeleteComplet);
+  }catch(e){
+     res.status(500).send(e);
+  }
+})
 
 
 
