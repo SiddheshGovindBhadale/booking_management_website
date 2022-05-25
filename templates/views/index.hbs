@@ -442,7 +442,7 @@
      function showData(){
      let ServicesData = ""
      /*get request*/
-     fetch("http://localhost:3000/services")
+     fetch("/services")
      .then(res => res.json())
      .then(data => {
          let dataLen = data.length
@@ -559,7 +559,7 @@
      showData()
      
      function sendData(id){
-     fetch("http://localhost:3000/services")
+     fetch("/services")
      .then(res => res.json())
      .then(data => {
      
@@ -585,7 +585,7 @@
      
      sessionStorage.setItem("myBooking", JSON.stringify(bookArr));
      
-     location.href ="./bookForm.html"
+     location.href ="/bookFormL"
      }) 
      
      .catch((e)=>{
