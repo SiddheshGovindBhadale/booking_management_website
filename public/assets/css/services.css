@@ -1,5 +1,5 @@
 body{
-  background:#eeeeee !important;
+  /* background:#eeeeee !important; */
 }
 
 li{list-style:none;}
@@ -84,10 +84,15 @@ li{list-style:none;}
   grid-gap:15px;
 }
 
+.showServices{
+  overflow-x: hidden;
+}
+
 .showServices .box{
   background-color:#fff;
   padding:35px 20px 8px 20px;
   width:100%;
+  box-shadow:0 2px 10px -1px rgb(0 0 0 / 19%);
 }
 
 .showServices .box h3{

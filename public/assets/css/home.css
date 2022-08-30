@@ -1,74 +1,75 @@
-.category{
-        position:relative;
-        top:-27px;
-       // background:#fff;
-      }
-      
-      .category .glide {
-       height:6rem;
-       display:flex;
-       align-items:center;
-       justify-content:center;
-      }
-      
-      .category .glide__slide--active{
-      opacity:1;
-      filter:none;
-      transform:scale(1.1);
-      transition:all 1s;
-      }
-      
-      @media screen and (min-width: 650px){
-         .category .glide {
-         position:relative;
-         z-index:1;
-         overflow: hidden;
-         }
-         
-         .category .glide__slide img{
-         height:100%;
-         width:100%;
-         }
-         
-         .category .dropdown{
-           margin:5px 10px;
-         }
-      }
-      /*.glide__slide--active a{
+.category {
+  position: relative;
+  top: -27px;
+}
+
+.category .glide {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category .glide__slide--active {
+  opacity: 1;
+  filter: none;
+  transform: scale(1.1);
+  transition: all 1s;
+}
+
+@media screen and (min-width: 650px) {
+  .category .glide {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .category .glide__slide img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .category .dropdown {
+    margin: 5px 10px;
+  }
+}
+
+/*.glide__slide--active a{
       transition:all 1s;
       position:relative;
       z-index:5;
       }*/
-      
-      
-      .category .glide__slides , .category .glide__track {
-      overflow:visible !important;
-      width:100%;
-      }
-      
-      .category .glide__slide {
-        display:flex;
-        align-items:center;
-        justify-content:center;
-      }
-      
-      .category .glide__slide img{
-       border:2px solid #f3f5f7;
-       border-radius:5px;
-       height:4.82rem;
-       width:11.25rem;
-      }
-      
-     
 
 
-
-.service .dreamit-section-sub-title h5{
-  margin-bottom:5px;
+.category .glide__slides,
+.category .glide__track {
+  overflow: visible !important;
+  width: 100%;
 }
 
-.service .para{
-  font-size:.9rem;
+.category .glide__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category .glide__slide img {
+  border: 2px solid #f3f5f7;
+  border-radius: 5px;
+  height: 4.82rem;
+  width: 11.25rem;
+}
+
+
+
+
+
+.service .dreamit-section-sub-title h5 {
+  margin-bottom: 5px;
+}
+
+.service .para {
+  font-size: .9rem;
 }
 
 
@@ -77,74 +78,80 @@
 
 /* why choose us section styling */
 .features {
-  padding-top:60px;
-  padding-bottom:50px;
+  padding-top: 60px;
+  padding-bottom: 50px;
 }
 
-.dreamit-section-sub-title h5{
-  color:#11406a;
-  font-size:16px;
-  font-weight:700;
-  letter-spacing:4px;
-  margin-bottom:10px;
-  margin-left:0px;
-  margin-right:0px;
-  margin-top:30px;
-  text-transform:uppercase;
+.dreamit-section-sub-title h5 {
+  color: #11406a;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 30px;
+  text-transform: uppercase;
 }
 
-h2{
-  margin:0 !important;
+h2 {
+  margin: 0 !important;
 }
 
-.dreamit-section-main-title h2,#about .dreamit-section-main-title h3{
-  font-size:23px;
-  font-weight:800;
-  line-height:1.2;
-  margin-bottom:0px !important;
-  text-transform:capitalize;
+.dreamit-section-main-title h2,
+#about .dreamit-section-main-title h3 {
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0px !important;
+  text-transform: capitalize;
 }
 
 .dreamit-section-main-title h2 span {
-  color:#11406a;
+  color: #11406a;
 }
 
-.features .para{
-  font-size:.9rem;
+.features .para {
+  font-size: .9rem;
 }
 
 .features .boxes {
-  display:flex;
-  flex-wrap:wrap;
-  display:grid;
- // grid-template-columns:1fr 1fr;
-  grid-gap:10px;
+  display: flex;
+  flex-wrap: wrap;
+  display: grid;
+  grid-gap: 10px;
 }
 
 .features .boxes .box {
-  display:flex;
-  align-items:center;
-  border:.5px solid black;
-  padding:13px 10px;
-  background:#11406a;
+  display: flex;
+  align-items: center;
+  border: .5px solid black;
+  padding: 13px 10px;
+  background: #11406a;
 }
 
-.features .boxes .box i{
-  font-size:1.3rem;
-  color:#e00746;
-  background:#fff;
-  padding:6px 5px;
-  border-radius:5px;
-  margin-right:10px;
+.features .boxes .box i {
+  font-size: 1.3rem;
+  color: #e00746;
+  background: #fff;
+  padding: 6px 5px;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
-.features .boxes .box h2{
-  font-size:15px;
-  font-weight:800;
-  line-height:1.2;
-  margin-bottom:0px !important;
-  text-transform:uppercase;
-  color:#fff;
+.features .boxes .box h2 {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0px !important;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+@media screen and (min-width: 420px) {
+  .features .boxes {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 
@@ -152,22 +159,22 @@ h2{
 
 
 
-.seemore{
-  padding:7px 17px;
-  display:block;
-  text-align:center;
-  text-decoration:none;
-  color:#fff;
-  background:#11406a;
-  margin:10px auto !important;
-  border-radius:5px;
-  border:1px solid #11406a;
-  transition:all .2s;
+.seemore {
+  padding: 7px 17px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: #11406a;
+  margin: 10px auto !important;
+  border-radius: 5px;
+  border: 1px solid #11406a;
+  transition: all .2s;
 }
 
 .seemore:hover {
-  color:#11406a;
-  background:transparent;
+  color: #11406a;
+  background: transparent;
 }
 
 /*=============== TESTIMONIAL ===============*/
@@ -176,12 +183,18 @@ h2{
 }
 
 .testimonial .main {
-  max-width:950px;
-  margin:auto;
+  max-width: 950px;
+  margin: auto;
+}
+
+.testimonial .main .testimonial__card{
+  background-color: #fff;
+  border-radius: 10px;
+  padding:30px 15px;
 }
 
 .testimonial-swiper {
-  max-width:450px;
+  /* max-width: 450px; */
 }
 
 .testimonial__quote {
@@ -191,7 +204,7 @@ h2{
   font-size: 1.5rem;
   color: #11406a;
   box-shadow: 0 4px 12px hsla(0, 0%, 20%, .1);
-  margin-bottom:2rem;
+  margin-bottom: 2rem;
 }
 
 .testimonial__description {
@@ -207,7 +220,6 @@ h2{
   display: flex;
   align-items: center;
   column-gap: 1rem;
-  margin-bottom: 7rem;
 }
 
 .testimonial__perfil-img {
@@ -223,20 +235,20 @@ h2{
 }
 
 .testimonial__perfil-name {
-  font-size:1rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--title-color);
 }
 
 .testimonial__perfil-detail {
-  font-size:.813rem;
+  font-size: .813rem;
 }
 
 .testimonial__images {
   position: relative;
 }
 
-.testimonial__img, 
+.testimonial__img,
 .testimonial__square {
   width: 250px;
 }
@@ -267,14 +279,14 @@ h2{
 .swiper-button-next,
 .swiper-button-prev {
   top: initial;
-  bottom: 5%;
+  bottom: 0%;
   width: initial;
   height: initial;
   background-color: #fff;
   box-shadow: 0 4px 12px hsla(0, 0%, 20%, .1);
   padding: .25rem;
   font-size: 1.5rem;
-  color:#11406a;
+  color: #11406a;
 }
 
 .swiper-button-next {
@@ -285,152 +297,177 @@ h2{
 .rate {
   position: static;
   margin-top: 10px;
-  margin-right:10px;
+  margin-right: 10px;
 }
+
 .rate a {
   font-size: 18px;
   color: #bbb;
-  text-decoration:none;
+  text-decoration: none;
 }
-.rate .star{
+
+.rate .star {
   color: #fe6067 !important;
 }
 
 /* review form */
 .post_review {
-      position: relative;
-      max-width:380px;
-      background: #fff;
-      padding: 20px 30px;
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      box-shadow: 0 4px 12px hsla(0, 0%, 20%, .1);
-      margin:30px auto 0 auto;
-      }
-      .post_review .post{
-      display: none;
-      }
-      .post_review .text{
-      font-size: 25px;
-      color: #666;
-      font-weight: 500;
-      }
-      .post_review .edit{
-      position: absolute;
-      right: 10px;
-      top: 5px;
-      font-size: 16px;
-      color: #666;
-      font-weight: 500;
-      cursor: pointer;
-      }
-      .post_review .edit:hover{
-      text-decoration: underline;
-      }
-      .post_review .star-widget input{
-      display: none;
-      }
-      .post_review .star-widget label{
-      font-size: 30px;
-      color: #444;
-      padding: 10px;
-      float: right;
-      transition: all 0.2s ease;
-      }
-      .post_review input:not(:checked) ~ label:hover,
-      .post_review input:not(:checked) ~ label:hover ~ label{
-      color: #fd4;
-      }
-      .post_review input:checked ~ label{
-      color: #fd4;
-      }
-      .post_review input#rate-5:checked ~ label{
-      color: #fe7;
-      text-shadow: 0 0 20px #952;
-      }
-      .post_review #rate-1:checked ~ form header:before{
-      content: "just hate it ";
-      }
-      .post_review #rate-2:checked ~ form header:before{
-      content: " don't like it ";
-      }
-      .post_review #rate-3:checked ~ form header:before{
-      content: "It is awesome ";
-      }
-      .post_review #rate-4:checked ~ form header:before{
-      content: " just like it ";
-      }
-      .post_review #rate-5:checked ~ form header:before{
-      content: " just love it ";
-      }
-      .post_review form{
-      display: block;
-      }
-      .post_review input:checked ~ form{
-      display: block;
-      }
-      .post_review form header{
-      width: 100%;
-      font-size: 25px;
-      color: #59abe3;
-      font-weight: 500;
-      margin: 5px 0 20px 0;
-      text-align: center;
-      transition: all 0.2s ease;
-      }
-      .post_review form .textarea{
-      height: 100px;
-      width: 100%;
-      overflow: hidden;
-      }
-      .post_review form .textarea textarea{
-      height: 100%;
-      width: 100%;
-      outline: none;
-      color: #111;
-      border: 1px solid #eeeeee;
-      background: #eeeeee;
-      padding: 10px;
-      font-size: 17px;
-      resize: none;
-      }
-      .post_review .textarea textarea:focus{
-      border-color: #59abe3;
-      }
-      .post_review form .review_btn{
-      height: 45px;
-      width: 100%;
-      margin: 15px 0;
-      }
-      .post_review form .review_btn button{
-      height: 100%;
-      width: 100% !important;
-      border: 1px solid #59abe3;
-      outline: none;
-      background: #59abe3;
-      color: #fff;
-      font-size: 17px;
-      font-weight: 500;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      }
-      .post_review form .review_btn button:hover{
-      background: #1b1b1b;
-      }
+  position: relative;
+  max-width: 380px;
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 4px 12px hsla(0, 0%, 20%, .1);
+  margin: 30px auto 0 auto;
+}
+
+.post_review .post {
+  display: none;
+}
+
+.post_review .text {
+  font-size: 25px;
+  color: #666;
+  font-weight: 500;
+}
+
+.post_review .edit {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.post_review .edit:hover {
+  text-decoration: underline;
+}
+
+.post_review .star-widget input {
+  display: none;
+}
+
+.post_review .star-widget label {
+  font-size: 30px;
+  color: #444;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+}
+
+.post_review input:not(:checked)~label:hover,
+.post_review input:not(:checked)~label:hover~label {
+  color: #fd4;
+}
+
+.post_review input:checked~label {
+  color: #fd4;
+}
+
+.post_review input#rate-5:checked~label {
+  color: #fe7;
+  text-shadow: 0 0 20px #952;
+}
+
+.post_review #rate-1:checked~form header:before {
+  content: "just hate it ";
+}
+
+.post_review #rate-2:checked~form header:before {
+  content: " don't like it ";
+}
+
+.post_review #rate-3:checked~form header:before {
+  content: "It is awesome ";
+}
+
+.post_review #rate-4:checked~form header:before {
+  content: " just like it ";
+}
+
+.post_review #rate-5:checked~form header:before {
+  content: " just love it ";
+}
+
+.post_review form {
+  display: block;
+}
+
+.post_review input:checked~form {
+  display: block;
+}
+
+.post_review form header {
+  width: 100%;
+  font-size: 25px;
+  color: #59abe3;
+  font-weight: 500;
+  margin: 5px 0 20px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.post_review form .textarea {
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.post_review form .textarea textarea {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #111;
+  border: 1px solid #eeeeee;
+  background: #eeeeee;
+  padding: 10px;
+  font-size: 17px;
+  resize: none;
+}
+
+.post_review .textarea textarea:focus {
+  border-color: #59abe3;
+}
+
+.post_review form .review_btn {
+  height: 45px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.post_review form .review_btn button {
+  height: 100%;
+  width: 100% !important;
+  border: 1px solid #59abe3;
+  outline: none;
+  background: #59abe3;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.post_review form .review_btn button:hover {
+  background: #1b1b1b;
+}
 
 
-@media (min-width: 1000px){
-  .testimonial__container{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+@media (min-width: 1000px) {
+  .testimonial__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  
-  .post_review{
-    min-width:380px;
+
+  .post_review {
+    min-width: 380px;
   }
 }

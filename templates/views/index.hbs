@@ -5,7 +5,7 @@
      <meta charset="UTF-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <link href="./cache/bootstrap.min.css" rel="stylesheet">
-     
+
      <!-- bootstrap -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -20,11 +20,11 @@
      <!-- SWIPER CSS -->
      <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
      <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">-->
-     
+
      <!--owl courosal-->
      <link rel="stylesheet" href="./assets/OwlCarousel/dist/assets/owl.carousel.min.css">
      <link rel="stylesheet" href="./assets/OwlCarousel/dist/assets/owl.theme.default.min.css">
-     
+
      <!-- styling -->
      <link href="./assets/css/style.css" rel="stylesheet">
      <!-- navbar styling -->
@@ -40,311 +40,356 @@
      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
      <title>HB Care</title>
      <style type="text/css">
-     #comServices .glide__slide{
-       display:flex;
-       align-items:center;
-       justify-content:center;
-       width:100% !important;
-     }
+          #comServices .glide__slide {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               width: 100% !important;
+          }
      </style>
 </head>
 
 <body id="top">
      {{>userNav}}
 
-     
+
      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-     <div class="carousel-inner">
-     <div class="carousel-item active" data-bs-interval="1000">
-     <img src="./assets/img/banar/b1.png" class="d-block w-100" alt="...">
+          <div class="carousel-inner">
+               <div class="carousel-item active" data-bs-interval="1000">
+                    <img src="./assets/img/banar/b1.png" class="d-block w-100" alt="...">
+               </div>
+               <div class="carousel-item" data-bs-interval="2000">
+                    <img src="./assets/img/banar/b1.png" class="d-block w-100" alt="...">
+               </div>
+               <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+               </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+               data-bs-slide="prev">
+               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+               <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+               data-bs-slide="next">
+               <span class="carousel-control-next-icon" aria-hidden="true"></span>
+               <span class="visually-hidden">Next</span>
+          </button>
      </div>
-     <div class="carousel-item" data-bs-interval="2000">
-     <img src="./assets/img/banar/b1.png" class="d-block w-100" alt="...">
-     </div>
-     <div class="carousel-item">
-     <img src="..." class="d-block w-100" alt="...">
-     </div>
-     </div>
-     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-     <span class="visually-hidden">Previous</span>
-     </button>
-     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-     <span class="visually-hidden">Next</span>
-     </button>
-     </div>
-     
+
      <div class="category container">
-     <div class="glide ">
-     <div class="glide__track " data-glide-el="track">
-     <ul class="glide__slides ">
-     <li class="glide__slide ">
-     <a href="#!" target="_blank">
-     <img src="./assets/img/services/b1.png" alt="" />
-     </a>
-     </li>
-     <li class="glide__slide ">
-     <a href="#!" target="_blank" >
-     <img src="./assets/img/services/b2.png" alt="" />
-     </a>
-     </li>
-     <li class="glide__slide">
-     <a href="#!" target="_blank">
-     <img src="./assets/img/services/b3.png" alt="" />
-     </a>
-     </li>
-     <li class="glide__slide">
-     <a href="#!" target="_blank">
-     <img src="./assets/img/services/b4.png" alt="" />
-     </a>
-     </li>
-     <li class="glide__slide">
-     <a href="#!" target="_blank">
-     <img src="./assets/img/services/b5.png" alt="" />
-     </a>
-     </li>
-     </ul>
-     </div>
-     </div>
+          <div class="glide ">
+               <div class="glide__track " data-glide-el="track">
+                    <ul class="glide__slides ">
+                         <li class="glide__slide ">
+                              <a href="#!" target="_blank">
+                                   <img src="./assets/img/services/b1.png" alt="" />
+                              </a>
+                         </li>
+                         <li class="glide__slide ">
+                              <a href="#!" target="_blank">
+                                   <img src="./assets/img/services/b2.png" alt="" />
+                              </a>
+                         </li>
+                         <li class="glide__slide">
+                              <a href="#!" target="_blank">
+                                   <img src="./assets/img/services/b3.png" alt="" />
+                              </a>
+                         </li>
+                         <li class="glide__slide">
+                              <a href="#!" target="_blank">
+                                   <img src="./assets/img/services/b4.png" alt="" />
+                              </a>
+                         </li>
+                         <li class="glide__slide">
+                              <a href="#!" target="_blank">
+                                   <img src="./assets/img/services/b5.png" alt="" />
+                              </a>
+                         </li>
+                    </ul>
+               </div>
+          </div>
      </div>
 
-   
 
-     <section class="service container " >
-            <div class="main" >
-                <div class="dreamit-section-sub-title" >
-                <h5>what we do</h5>
-                </div>
-                <div class="dreamit-section-main-title" style="margin-bottom:10px;" >
-                <h2>HBCcare provide</h2>
-                <!--<h2>Our <span>Services</span></h2>-->
-                </div>
-                <div>
-                    <p class="para" >
-                    All types of blood testing (FREE HOME BLOOD COLLECTION) COVID -19 RT- PCR(ICMR APPROVED REPORTS) and portable/Home X-RAY & ECG are also available. We will provide you accurate reports done by MD pathologist Doctor. Basic blood test reports will provide you in 8-12 hours and special blood test reports in tag time. Reports will send you online on e-mail/ what'sapp.
-                    Our main processing unit is in Kharghar , Navi Mumbai .</p>
-                </div>
-            </div>
+
+     <section class="service container ">
+          <div class="main">
+               <div class="dreamit-section-sub-title">
+                    <h5>what we do</h5>
+               </div>
+               <div class="dreamit-section-main-title" style="margin-bottom:10px;">
+                    <h2>HBCcare provide</h2>
+                    <!--<h2>Our <span>Services</span></h2>-->
+               </div>
+               <div>
+                    <p class="para">
+                         All types of blood testing (FREE HOME BLOOD COLLECTION) COVID -19 RT- PCR(ICMR APPROVED
+                         REPORTS) and portable/Home X-RAY & ECG are also available. We will provide you accurate reports
+                         done by MD pathologist Doctor. Basic blood test reports will provide you in 8-12 hours and
+                         special blood test reports in tag time. Reports will send you online on e-mail/ what'sapp.
+                         Our main processing unit is in Kharghar , Navi Mumbai .</p>
+               </div>
+          </div>
      </section>
 
-    <section class="features container-fluid" style="background:#fff;" >
-       <div class="container >
-           <div class="main" >
-                <div class="dreamit-section-sub-title" >
-                <h5>WHY CHOOSE US</h5>
-                </div>
-                <div class="dreamit-section-main-title" style="margin-bottom:7px;" >
-                <h2>Why You Choose</h2>
-                <h2>Our <span>Services</span></h2>
-                </div>
-                <div class="para" >
-                     <p>HBCcare has a team of 200 senior technicians having 9 years of experience . All the technicians are degree holder and trained professionals in home healthcare.One of the leading diagnostics centres in the home healthcare business in india.</p>
-                     <p>We offer a comprehensive range of 4000+ clinical laboratory tests and profiles, which are used for prediction, early detection , diagnostic screening confirmation and /or monitoring of the disease.</p>
-                </div>
-                
-                <div class="boxes" >
-                     <div class="box" >
-                     <i class="fa-solid fa-house"></i>
-                     <h2>free home blood collection</h2>
-                     </div>
-                     <div class="box" >
-                     <i class="fa-solid fa-wallet"></i>
-                     <h2>affordable price</h2>
-                     </div>
-                     <div class="box" >
-                     <i class="fa-solid fa-users"></i>
-                     <h2>professional staff</h2>
-                     </div>
-                     <div class="box" >
-                     <i class="fa-solid fa-newspaper"></i>
-                     <h2>Proficiency testing for accurate reports</h2>
-                     </div>
-                </div>
-           </div>
-        </section>
-    </section>
+     <section class="features container-fluid" style="background:#eee;">
+          <div class="container >
+           <div class=" main">
+               <div class="dreamit-section-sub-title">
+                    <h5>WHY CHOOSE US</h5>
+               </div>
+               <div class="dreamit-section-main-title" style="margin-bottom:7px;">
+                    <h2>Why You Choose</h2>
+                    <h2>Our <span>Services</span></h2>
+               </div>
+               <div class="para">
+                    <p>HBCcare has a team of 200 senior technicians having 9 years of experience . All the technicians
+                         are degree holder and trained professionals in home healthcare.One of the leading diagnostics
+                         centres in the home healthcare business in india.</p>
+                    <p>We offer a comprehensive range of 4000+ clinical laboratory tests and profiles, which are used
+                         for prediction, early detection , diagnostic screening confirmation and /or monitoring of the
+                         disease.</p>
+               </div>
 
-     
-     
-     <section class="container services" >
-            <div class="title">
-            <h3>Top Common Tests</h3>
-            </div>
-            <div class="showServices" >
-                 <div class="swiper-container">
+               <div class="boxes">
+                    <div class="box">
+                         <i class="fa-solid fa-house"></i>
+                         <h2>free home blood collection</h2>
+                    </div>
+                    <div class="box">
+                         <i class="fa-solid fa-wallet"></i>
+                         <h2>affordable price</h2>
+                    </div>
+                    <div class="box">
+                         <i class="fa-solid fa-users"></i>
+                         <h2>professional staff</h2>
+                    </div>
+                    <div class="box">
+                         <i class="fa-solid fa-newspaper"></i>
+                         <h2>Proficiency testing for accurate reports</h2>
+                    </div>
+               </div>
+          </div>
+     </section>
+     </section>
+
+
+
+     <section class="container services">
+          <div class="title">
+               <h3>Top Common Tests</h3>
+          </div>
+          <div class="showServices">
+               <div class="swiper-container">
                     <div class="swiper-wrapper">
-                       
+
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
-                 </div>
-                 <a href="/userServicesL" class="seemore" >See more </a>
-            </div>
+               </div>
+               <a href="/userServicesL" class="seemore mt-3">See more </a>
+          </div>
      </section>
-
 
      <!--==================== TESTIMONIAL ====================-->
-     <section class="testimonial section container" id="testimonial">
+     <section style="background:#eee; padding: 3rem 0;">
+          <section class="testimonial section container" id="testimonial">
 
-          <div class="title">
-               <h3>Reviews</h3>
-          </div>
-
-          <div class="testimonial__container main">
-               <div class="swiper testimonial-swiper">
-                    <div class="swiper-wrapper">
-                         <div class="testimonial__card swiper-slide">
-                              <div class="testimonial__quote">
-                                   <i class='bx bxs-quote-alt-left'></i>
-                              </div>
-                              <p class="testimonial__description">
-                                   Faizal came to collect my blood sample. Extremely polite guy and did everything fast and properly. Highly recommend HBCcare for all tests.
-                              </p>
-                              <h3 class="testimonial__date">Apr 18. 2022</h3>
-
-                              <div class="testimonial__perfil">
-                                   <img src="./assets/img/icon/user.png" alt="" class="testimonial__perfil-img">
-
-                                   <div class="testimonial__perfil-data">
-                                        <span class="testimonial__perfil-name">Siddhesh Bhadale</span>
-                                        <span class="testimonial__perfil-detail">
-                                             <span class="rate">
-                                                  <a href="#!" class="star">★ </a>
-                                                  <a href="#!" class="star">★ </a>
-                                                  <a href="#!" class="star">★ </a>
-                                                  <a href="#!" class="star">★ </a>
-                                                  <a href="#!" class="star">★ </a>
-                                             </span>
-                                        </span>
-                                   </div>
-                              </div>
-                         </div>
-                         
-                         <div class="testimonial__card swiper-slide">
-                         <div class="testimonial__quote">
-                         <i class='bx bxs-quote-alt-left'></i>
-                         </div>
-                         <p class="testimonial__description">
-                         Quality is excellent ,reaching reports on promised time sample pick up is good.
-                         </p>
-                         <h3 class="testimonial__date">Apr 10. 2021</h3>
-                         
-                         <div class="testimonial__perfil">
-                         <img src="./assets/img/icon/user.png" alt="" class="testimonial__perfil-img">
-                         
-                         <div class="testimonial__perfil-data">
-                         <span class="testimonial__perfil-name">Prajval Shelke</span>
-                         <span class="testimonial__perfil-detail">
-                         <span class="rate">
-                         <a href="#!" class="star">★ </a>
-                         <a href="#!" class="star">★ </a>
-                         <a href="#!" class="star">★ </a>
-                         <a href="#!" class="star">★ </a>
-                         <a href="#!" class="">★ </a>
-                         </span>
-                         </span>
-                         </div>
-                         </div>
-                         </div>
-
-                         <div class="testimonial__card swiper-slide">
-                              <div class="testimonial__quote">
-                                   <i class='bx bxs-quote-alt-left'></i>
-                              </div>
-                              <p class="testimonial__description">
-                                   Very good staff ,excellent execution of samples, timely result even before promised time.
-                              </p>
-                              <h3 class="testimonial__date">Apr 07. 2021</h3>
-
-                              <div class="testimonial__perfil">
-                                   <img src="./assets/img/icon/user.png" alt="" class="testimonial__perfil-img">
-
-                                   <div class="testimonial__perfil-data">
-                                        <span class="testimonial__perfil-name">Samantha Yewale</span>
-                                        <span class="testimonial__perfil-detail">
-                                             <span class="rate">
-                                                  <a href="#!" class="star">★ </a>
-                                                  <a href="#!" class="star">★ </a>
-                                                  <a href="#!" class="star">★ </a>
-                                                  <a href="#!" class="star">★ </a>
-                                                  <a href="#!" class="star">★ </a>
-                                             </span>
-                                        </span>
-                                   </div>
-                              </div>
-                         </div>
-
-                         <div class="testimonial__card swiper-slide">
-                              <div class="testimonial__quote">
-                                   <i class='bx bxs-quote-alt-left'></i>
-                              </div>
-                              <p class="testimonial__description">
-                                   Had a very smooth experience in booking.  Executive was very punctual and on time for sample collection. Followed safety standards throughout.
-                              </p>
-                              <h3 class="testimonial__date">Apr 07. 2021</h3>
-
-                              <div class="testimonial__perfil">
-                                   <img src="./assets/img/icon/user.png" alt="" class="testimonial__perfil-img">
-
-                                   <div class="testimonial__perfil-data">
-                                        <span class="testimonial__perfil-name">Akash Pawar</span>
-                                        <span class="testimonial__perfil-detail">
-                                             <span class="rate">
-                                                  <a href="#!" class="star">★ </a>
-                                                  <a href="#!" class="star">★ </a>
-                                                  <a href="#!" class="star">★ </a>
-                                                  <a href="#!" class="star">★ </a>
-                                                  <a href="#!" class="">★ </a>
-                                             </span>
-                                        </span>
-                                   </div>
-                              </div>
-                         </div>
-                         
-                         <div class="testimonial__card swiper-slide">
-                         <div class="testimonial__quote">
-                         <i class='bx bxs-quote-alt-left'></i>
-                         </div>
-                         <p class="testimonial__description">
-                         This is my first experience with HBCcare and it was very nice and I highly impressed with the service. Sample Collection boy came on time, very hygiene, took sample very nicely, polite speaking. The best part is company's sample collection kit. Eve...
-                         </p>
-                         <h3 class="testimonial__date">Apr 01. 2021</h3>
-                         
-                         <div class="testimonial__perfil">
-                         <img src="./assets/img/icon/user.png" alt="" class="testimonial__perfil-img">
-                         
-                         <div class="testimonial__perfil-data">
-                         <span class="testimonial__perfil-name">Madhuri Sharma</span>
-                         <span class="testimonial__perfil-detail">
-                         <span class="rate">
-                         <a href="#!" class="star">★ </a>
-                         <a href="#!" class="star">★ </a>
-                         <a href="#!" class="star">★ </a>
-                         <a href="#!" class="star">★ </a>
-                         <a href="#!" class="">★ </a>
-                         </span>
-                         </span>
-                         </div>
-                         </div>
-                         </div>
-                    </div>
-
-                    <div class="swiper-button-next">
-                         <i class='bx bx-right-arrow-alt'></i>
-                    </div>
-                    <div class="swiper-button-prev">
-                         <i class='bx bx-left-arrow-alt'></i>
-                    </div>
+               <div class="title">
+                    <h3>Reviews</h3>
                </div>
+
+               <div class="testimonial__container main">
+                    <div class="swiper testimonial-swiper">
+                         <div class="swiper-wrapper">
+                              <div class="testimonial__card swiper-slide">
+                                   <div class="testimonial__quote">
+                                        <i class='bx bxs-quote-alt-left'></i>
+                                   </div>
+                                   <p class="testimonial__description">
+                                        Faizal came to collect my blood sample. Extremely polite guy and did everything
+                                        fast
+                                        and properly. Highly recommend HBCcare for all tests.
+                                   </p>
+                                   <h3 class="testimonial__date">Apr 18. 2022</h3>
+
+                                   <div class="testimonial__perfil">
+                                        <img src="./assets/img/icon/user.png" alt="" class="testimonial__perfil-img">
+
+                                        <div class="testimonial__perfil-data">
+                                             <span class="testimonial__perfil-name">Siddhesh Bhadale</span>
+                                             <span class="testimonial__perfil-detail">
+                                                  <span class="rate">
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                  </span>
+                                             </span>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="testimonial__card swiper-slide">
+                                   <div class="testimonial__quote">
+                                        <i class='bx bxs-quote-alt-left'></i>
+                                   </div>
+                                   <p class="testimonial__description">
+                                        Quality is excellent ,reaching reports on promised time sample pick up is good.
+                                   </p>
+                                   <h3 class="testimonial__date">Apr 10. 2021</h3>
+
+                                   <div class="testimonial__perfil">
+                                        <img src="./assets/img/icon/user.png" alt="" class="testimonial__perfil-img">
+
+                                        <div class="testimonial__perfil-data">
+                                             <span class="testimonial__perfil-name">Prajval Shelke</span>
+                                             <span class="testimonial__perfil-detail">
+                                                  <span class="rate">
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="">★ </a>
+                                                  </span>
+                                             </span>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="testimonial__card swiper-slide">
+                                   <div class="testimonial__quote">
+                                        <i class='bx bxs-quote-alt-left'></i>
+                                   </div>
+                                   <p class="testimonial__description">
+                                        Very good staff ,excellent execution of samples, timely result even before
+                                        promised
+                                        time.
+                                   </p>
+                                   <h3 class="testimonial__date">Apr 07. 2021</h3>
+
+                                   <div class="testimonial__perfil">
+                                        <img src="./assets/img/icon/user.png" alt="" class="testimonial__perfil-img">
+
+                                        <div class="testimonial__perfil-data">
+                                             <span class="testimonial__perfil-name">Samantha Yewale</span>
+                                             <span class="testimonial__perfil-detail">
+                                                  <span class="rate">
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                  </span>
+                                             </span>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="testimonial__card swiper-slide">
+                                   <div class="testimonial__quote">
+                                        <i class='bx bxs-quote-alt-left'></i>
+                                   </div>
+                                   <p class="testimonial__description">
+                                        Had a very smooth experience in booking. Executive was very punctual and on time
+                                        for
+                                        sample collection. Followed safety standards throughout.
+                                   </p>
+                                   <h3 class="testimonial__date">Apr 07. 2021</h3>
+
+                                   <div class="testimonial__perfil">
+                                        <img src="./assets/img/icon/user.png" alt="" class="testimonial__perfil-img">
+
+                                        <div class="testimonial__perfil-data">
+                                             <span class="testimonial__perfil-name">Akash Pawar</span>
+                                             <span class="testimonial__perfil-detail">
+                                                  <span class="rate">
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="">★ </a>
+                                                  </span>
+                                             </span>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="testimonial__card swiper-slide">
+                                   <div class="testimonial__quote">
+                                        <i class='bx bxs-quote-alt-left'></i>
+                                   </div>
+                                   <p class="testimonial__description">
+                                        This is my first experience with HBCcare and it was very nice and I highly
+                                        impressed
+                                        with the service. Sample Collection boy came on time, very hygiene, took sample
+                                        very
+                                        nicely, polite speaking. The best part is company's sample collection kit.
+                                        Eve...
+                                   </p>
+                                   <h3 class="testimonial__date">Apr 01. 2021</h3>
+
+                                   <div class="testimonial__perfil">
+                                        <img src="./assets/img/icon/user.png" alt="" class="testimonial__perfil-img">
+
+                                        <div class="testimonial__perfil-data">
+                                             <span class="testimonial__perfil-name">Madhuri Sharma</span>
+                                             <span class="testimonial__perfil-detail">
+                                                  <span class="rate">
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="star">★ </a>
+                                                       <a href="#!" class="">★ </a>
+                                                  </span>
+                                             </span>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="swiper-button-next">
+                              <i class='bx bx-right-arrow-alt'></i>
+                         </div>
+                         <div class="swiper-button-prev">
+                              <i class='bx bx-left-arrow-alt'></i>
+                         </div>
+                    </div>
+          </section>
      </section>
 
-
+     <section id="newsLetter">
+          <div class="newsLetter wrapper">
+               <div class="container">
+                    <div row>
+                         <div class="col-sm-12">
+                              <div class="text-content text-center pb-4">
+                                   <h2>Hurry up! Subscribe our Newsletter and get 25% off</h2>
+                                   <p>Limited time offer for this month. credit card not required</p>
+                              </div>
+                              <form class="newsLetter_form">
+                                   <div class="row">
+                                        <div class="col-md-8 col-12">
+                                             <input class="form-control" type="email" placeholder="Enter Email here"
+                                                  name="email">
+                                        </div>
+                                        <div class="col-md-4 col-12">
+                                             <button class="main-btn my-auto" type="submit">Submit</button>
+                                        </div>
+                                   </div>
+                              </form>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
 
 
      {{>footer}}
-     
-     <section id="models" ></section>
+
+     <section id="models"></section>
 
 
 
@@ -379,7 +424,15 @@
           let testimonialSwiper = new Swiper(".testimonial-swiper", {
                spaceBetween: 30,
                loop: 'true',
-
+               breakpoints: {
+                    576: {
+                         slidesPerView: 2,
+                    },
+                    768: {
+                         slidesPerView: 2,
+                         spaceBetween: 48,
+                    },
+               },
                navigation: {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
@@ -391,68 +444,73 @@
      </script>
      <!-- Glidejs -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
-     
+
      <script type="text/javascript">
-     const glide = document.querySelector(".glide");
-     if (glide)
-     new Glide(glide, {
-     type: "carousel",
-     startAt: 0,
-     perView: 3,
-     gap: 30,
-     animationDuration: 800,
-     focusAt: 'center',
-     hoverpause: true,
-     autoplay: 3000,
-     animationDuration: 800,
-     animationTimingFunc: "cubic-bezier(0.165, 0.840, 0.440, 1.000)",
-     breakpoints: {
-     1030:{
-     perView: 3,
-     },
-     
-     996: {
-     perView: 3,
-     },
-     
-     450: {
-     perView: 1.8,
-     },
-     
-     380: {
-     perView: 1.6,
-     },
-     },
-     }).mount();
-     
-     
-     
-     var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        slidesPerView: 1,
-        loop: 'true',
-        centeredSlides: true,
-        paginationClickable: true,
-        spaceBetween: 30,
-     });
-     
-     
-     let serviceModel = document.getElementById("models")
-     // show services in page
-     function showData(){
-     let ServicesData = ""
-     /*get request*/
-     fetch("/services")
-     .then(res => res.json())
-     .then(data => {
-         let dataLen = data.length
-         let ServicesModels = ""
-         if(dataLen > 6){
-            dataLen = 6
-         }
-     
-         for(let i = 0; i<dataLen; i++){
-            swiper.appendSlide(`
+          const glide = document.querySelector(".glide");
+          if (glide)
+               new Glide(glide, {
+                    type: "carousel",
+                    startAt: 0,
+                    perView: 3,
+                    gap: 30,
+                    animationDuration: 800,
+                    focusAt: 'center',
+                    hoverpause: true,
+                    autoplay: 3000,
+                    animationDuration: 800,
+                    animationTimingFunc: "cubic-bezier(0.165, 0.840, 0.440, 1.000)",
+                    breakpoints: {
+                         1030: {
+                              perView: 3,
+                         },
+
+                         996: {
+                              perView: 3,
+                         },
+
+                         450: {
+                              perView: 1.8,
+                         },
+
+                         380: {
+                              perView: 1.6,
+                         },
+                    },
+               }).mount();
+
+
+          var swiper = new Swiper('.swiper-container', {
+               spaceBetween: 24,
+               loop: 'true',
+               grapCursor: true,
+               breakpoints: {
+                    576: {
+                         slidesPerView: 2,
+                    },
+                    768: {
+                         slidesPerView: 2,
+                         spaceBetween: 48,
+                    },
+               },
+          });
+
+
+          let serviceModel = document.getElementById("models")
+          // show services in page
+          function showData() {
+               let ServicesData = ""
+               /*get request*/
+               fetch("/services")
+                    .then(res => res.json())
+                    .then(data => {
+                         let dataLen = data.length
+                         let ServicesModels = ""
+                         if (dataLen > 6) {
+                              dataLen = 6
+                         }
+
+                         for (let i = 0; i < dataLen; i++) {
+                              swiper.appendSlide(`
                 <div class="box swiper-slide">
                      <h3>${data[i].name}</h3>
                      <div class="pre_info">
@@ -474,8 +532,8 @@
                      <p class="info"><i class='bx bx-home-alt'></i> Home Collection Available</p>
                 </div>
             `)
-            
-            ServicesModels += `
+
+                              ServicesModels += `
             <div class="modal fade" id="${data[i]._id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -549,49 +607,49 @@
             </div>
             </div>
             `
-         }
-         serviceModel.innerHTML = ServicesModels
-     })
-     .catch((e)=>{
-     console.log(e)
-     })
-     }
-     showData()
-     
-     function sendData(id){
-     fetch("/services")
-     .then(res => res.json())
-     .then(data => {
-     
-     
-     let bookObj ={
-     title : data[id].name,
-     preTest: data[id].preTest,
-     dTime: data[id].dTime,
-     price: data[id].price,
-     type: data[id].type
-     };
-     console.log(bookObj.title)
-     
-     let localBook = sessionStorage.getItem("myBooking");
-     
-     if(localBook == null){
-     bookArr = [];
-     }else{
-     bookArr = JSON.parse(localBook);
-     }
-     
-     bookArr.push(bookObj);
-     
-     sessionStorage.setItem("myBooking", JSON.stringify(bookArr));
-     
-     location.href ="/bookFormL"
-     }) 
-     
-     .catch((e)=>{
-     console.log(e)
-     })
-     }
+                         }
+                         serviceModel.innerHTML = ServicesModels
+                    })
+                    .catch((e) => {
+                         console.log(e)
+                    })
+          }
+          showData()
+
+          function sendData(id) {
+               fetch("/services")
+                    .then(res => res.json())
+                    .then(data => {
+
+
+                         let bookObj = {
+                              title: data[id].name,
+                              preTest: data[id].preTest,
+                              dTime: data[id].dTime,
+                              price: data[id].price,
+                              type: data[id].type
+                         };
+                         console.log(bookObj.title)
+
+                         let localBook = sessionStorage.getItem("myBooking");
+
+                         if (localBook == null) {
+                              bookArr = [];
+                         } else {
+                              bookArr = JSON.parse(localBook);
+                         }
+
+                         bookArr.push(bookObj);
+
+                         sessionStorage.setItem("myBooking", JSON.stringify(bookArr));
+
+                         location.href = "/bookFormL"
+                    })
+
+                    .catch((e) => {
+                         console.log(e)
+                    })
+          }
      </script>
 </body>
 
